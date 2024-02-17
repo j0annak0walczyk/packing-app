@@ -1,22 +1,28 @@
 {
   "packed-items": [
     {
-      "id": 1,
+      "id": "1",
       "cityName": "Berlin",
       "country": "Germany",
       "item": "trousers"
     },
     {
-      "id": 2,
+      "id": "2",
       "cityName": "Milagros",
       "country": "Spain",
       "item": "t-shirt"
     },
     {
-      "id": 3,
+      "id": "3",
       "cityName": "Trasobares",
       "country": "Spain",
       "item": "backpack"
+    },
+    {
+      "id": 4,
+      "cityName": "Warsaw",
+      "country": "Poland",
+      "item": "phone"
     }
   ]
 }

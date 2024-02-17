@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom";
 import styles from "./Homepage.module.css";
+import PackingListContainer from "./PackingListContainer";
 
-function Homepage() {
+function Homepage({ isLoading, itemsList, setItemsList }) {
   return (
     <div className={styles.homepage}>
       <div className={styles.header}>
         <h1>Packing List App</h1>
         <h2>Pack smart, travel light: Never forget a thing.</h2>
-
-        <Link to="/listApp">
-          <button>Click here to create your packing list</button>
-        </Link>
+        <PackingListContainer
+          isLoading={isLoading}
+          itemsList={itemsList}
+          setItemsList={setItemsList}
+        />
       </div>
       <div>
         <img src="src/assets/homepage_photo.jpg" />
