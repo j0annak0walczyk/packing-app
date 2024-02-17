@@ -1,0 +1,16 @@
+.container {
+  height: 100vh;
+  font-family: "Lucida Sans Unicode";
+  color: #012f1b;
+  background-image: linear-gradient(rgba(233, 229, 222, 0.8), #c9cac1);
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container > div {
+  padding: 5rem;
+  border: solid;
+  border-radius: 5px;
+}
