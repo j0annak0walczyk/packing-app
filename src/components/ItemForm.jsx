@@ -9,22 +9,12 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
   const [city, setCity] = useState("");
   const [item, setItem] = useState("");
 
-  const addItemBtn = function (e) {
+  const postNewItemAndAddItemToState = function (e) {
     e.preventDefault();
 
     if (!country || !city || !item) return;
 
     if (country && city && item) {
-      // setItemsList((prevState) => [
-      //   ...prevState,
-      //   {
-      //     id: prevState.length + 1,
-      //     cityName: city,
-      //     country: country,
-      //     item: item,
-      //   },
-      // ]);
-
       const newItem = {
         id: itemsList.length + 1,
         cityName: city,
@@ -32,9 +22,8 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
         item: item,
       };
 
-      setItemsList((prevState) => [...prevState, newItem]);
-
       addItem(newItem);
+
       alert("Item added");
       setCountry("");
       setCity("");
@@ -53,6 +42,9 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
       });
       const data = await res.json();
       console.log(data);
+      if (res.ok) {
+        setItemsList((prevState) => [...prevState, data]);
+      }
     } catch (e) {
       console.log(e);
     }
@@ -79,7 +71,7 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
           value={item}
           onChange={(e) => setItem(e.target.value)}
         />
-        <Button onClickFunction={addItemBtn}>Add item</Button>
+        <Button onClickFunction={postNewItemAndAddItemToState}>Add item</Button>
       </form>
     </div>
   );

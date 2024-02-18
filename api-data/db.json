@@ -23,6 +23,18 @@
       "cityName": "Warsaw",
       "country": "Poland",
       "item": "phone"
+    },
+    {
+      "id": 5,
+      "cityName": "qwerdv",
+      "country": "qwerf",
+      "item": "qev"
+    },
+    {
+      "id": 6,
+      "cityName": "qqqq",
+      "country": "qqqq",
+      "item": "qqqq"
     }
   ]
 }
