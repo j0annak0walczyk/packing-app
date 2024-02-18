@@ -9,6 +9,12 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
   const [city, setCity] = useState("");
   const [item, setItem] = useState("");
 
+  const clearForm = function () {
+    setCountry("");
+    setCity("");
+    setItem("");
+  };
+
   const postNewItemAndAddItemToState = function (e) {
     e.preventDefault();
 
@@ -23,11 +29,7 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
       };
 
       addItem(newItem);
-
-      alert("Item added");
-      setCountry("");
-      setCity("");
-      setItem("");
+      clearForm();
     } else {
       alert("Fill in all fields");
     }
@@ -44,6 +46,7 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
       console.log(data);
       if (res.ok) {
         setItemsList((prevState) => [...prevState, data]);
+        alert("Item added");
       }
     } catch (e) {
       console.log(e);
