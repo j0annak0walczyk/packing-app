@@ -15,7 +15,6 @@ export const App = () => {
         if (!res.ok) throw new Error();
         const data = await res.json();
         setIsLoading(false);
-        console.log(data);
         setItemsList(data);
       } catch (e) {
         console.log(e);

@@ -3,6 +3,7 @@ import PackingListItems from "./PackingListItems";
 import styles from "./PackingListContainer.module.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PackingListAppNav } from "./PackingListAppNav";
+import { ItemDetails } from "./ItemDetails";
 
 function PackingListContainer({ isLoading, itemsList, setItemsList }) {
   return (
@@ -29,6 +30,11 @@ function PackingListContainer({ isLoading, itemsList, setItemsList }) {
                 <ItemForm setItemsList={setItemsList} itemsList={itemsList} />
               }
             />
+            <Route
+              path="/list/:id"
+              element={<ItemDetails itemsList={itemsList} />}
+            />
+
             <Route path="map" element={<div>Mapa</div>} />
           </Routes>
         </BrowserRouter>

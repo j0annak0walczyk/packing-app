@@ -4,37 +4,29 @@
       "id": "1",
       "cityName": "Berlin",
       "country": "Germany",
-      "item": "trousers"
+      "item": "trousers",
+      "note": "2 pairs"
     },
     {
       "id": "2",
       "cityName": "Milagros",
       "country": "Spain",
-      "item": "t-shirt"
+      "item": "t-shirt",
+      "note": "yellow, green and blue"
     },
     {
       "id": "3",
       "cityName": "Trasobares",
       "country": "Spain",
-      "item": "backpack"
+      "item": "backpack",
+      "note": "very big"
     },
     {
-      "id": 4,
+      "id": "4",
       "cityName": "Warsaw",
       "country": "Poland",
-      "item": "phone"
-    },
-    {
-      "id": 5,
-      "cityName": "qwerdv",
-      "country": "qwerf",
-      "item": "qev"
-    },
-    {
-      "id": 6,
-      "cityName": "qqqq",
-      "country": "qqqq",
-      "item": "qqqq"
+      "item": "phone",
+      "note": "Remember about charger!!"
     }
   ]
 }
