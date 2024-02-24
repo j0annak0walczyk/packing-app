@@ -8,11 +8,13 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [item, setItem] = useState("");
+  const [note, setNote] = useState("");
 
   const clearForm = function () {
     setCountry("");
     setCity("");
     setItem("");
+    setNote("");
   };
 
   const postNewItemAndAddItemToState = function (e) {
@@ -22,10 +24,11 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
 
     if (country && city && item) {
       const newItem = {
-        id: itemsList.length + 1,
+        id: (itemsList.length + 1).toString(),
         cityName: city,
         country: country,
         item: item,
+        note: note,
       };
 
       addItem(newItem);
@@ -73,6 +76,11 @@ export const ItemForm = ({ setItemsList, itemsList }) => {
           placeholder="Item"
           value={item}
           onChange={(e) => setItem(e.target.value)}
+        />
+        <textarea
+          placeholder="Additional note (optional)"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
         />
         <Button onClickFunction={postNewItemAndAddItemToState}>Add item</Button>
       </form>
