@@ -11,7 +11,7 @@ export const App = () => {
     async function fetchItemsList() {
       setIsLoading(true);
       try {
-        const res = await fetch(`${BASE_URL}/packed-items`);
+        const res = await fetch(`${BASE_URL}/packed-items/`);
         if (!res.ok) throw new Error();
         const data = await res.json();
         setIsLoading(false);

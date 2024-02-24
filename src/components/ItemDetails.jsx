@@ -1,22 +1,42 @@
 import { useParams } from "react-router-dom";
 import styles from "./ItemDetails.module.css";
+import { useEffect, useState } from "react";
+import { Loader } from "./Loader";
 
-export const ItemDetails = ({ itemsList }) => {
+const BASE_URL = "http://localhost:9000";
+
+export const ItemDetails = () => {
   const { id } = useParams();
-  const renderItemDetails = function () {
-    if (itemsList.length === 0) return;
-    const choseItem = itemsList.filter((item) => item.id === id)[0];
-    console.log(choseItem);
-    const itemDetails = (
-      <>
-        <span>Country: {choseItem.country}</span>
-        <span>City: {choseItem.cityName}</span>
-        <span>Item: {choseItem.item}</span>
-        <span>Note: {choseItem.note}</span>
-      </>
-    );
-    return itemDetails;
-  };
+  const [isLoading, setIsLoading] = useState(false);
+  const [chosenItem, setChosenItem] = useState("");
 
-  return <div className={styles.detailsContainer}>{renderItemDetails()}</div>;
+  useEffect(
+    function () {
+      async function fetchItemsList() {
+        setIsLoading(true);
+        try {
+          const res = await fetch(`${BASE_URL}/packed-items/${id}`);
+          if (!res.ok) throw new Error();
+          const data = await res.json();
+          setIsLoading(false);
+          setChosenItem(data);
+        } catch (e) {
+          console.log(e);
+        }
+      }
+      fetchItemsList();
+    },
+    [id]
+  );
+
+  if (isLoading) return <Loader />;
+
+  return (
+    <div className={styles.detailsContainer}>
+      <span>Country: {chosenItem.country}</span>
+      <span>City: {chosenItem.cityName}</span>
+      <span>Item: {chosenItem.item}</span>
+      <span>Note: {chosenItem.note}</span>
+    </div>
+  );
 };

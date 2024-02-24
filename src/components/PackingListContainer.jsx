@@ -30,10 +30,7 @@ function PackingListContainer({ isLoading, itemsList, setItemsList }) {
                 <ItemForm setItemsList={setItemsList} itemsList={itemsList} />
               }
             />
-            <Route
-              path="/list/:id"
-              element={<ItemDetails itemsList={itemsList} />}
-            />
+            <Route path="/list/:id" element={<ItemDetails />} />
 
             <Route path="map" element={<div>Mapa</div>} />
           </Routes>
