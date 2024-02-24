@@ -7,19 +7,16 @@ const BASE_URL = "http://localhost:9000";
 
 export const ItemDetails = () => {
   const { id } = useParams();
-  const [isLoading, setIsLoading] = useState(false);
-  const [chosenItem, setChosenItem] = useState("");
+  const [itemData, setItemData] = useState(null);
 
   useEffect(
     function () {
       async function fetchItemsList() {
-        setIsLoading(true);
         try {
           const res = await fetch(`${BASE_URL}/packed-items/${id}`);
           if (!res.ok) throw new Error();
           const data = await res.json();
-          setIsLoading(false);
-          setChosenItem(data);
+          setItemData(data);
         } catch (e) {
           console.log(e);
         }
@@ -29,14 +26,14 @@ export const ItemDetails = () => {
     [id]
   );
 
-  if (isLoading) return <Loader />;
+  if (itemData === null) return <Loader />;
 
   return (
     <div className={styles.detailsContainer}>
-      <span>Country: {chosenItem.country}</span>
-      <span>City: {chosenItem.cityName}</span>
-      <span>Item: {chosenItem.item}</span>
-      <span>Note: {chosenItem.note}</span>
+      <span>Country: {itemData.country}</span>
+      <span>City: {itemData.cityName}</span>
+      <span>Item: {itemData.item}</span>
+      <span>Note: {itemData.note}</span>
     </div>
   );
 };
