@@ -1,23 +1,23 @@
 import { Link } from "react-router-dom";
-import styles from "./PackingListAppNav.module.css";
-import { Button } from "./Button";
+import styles from "./AppNav.module.css";
+import { Button } from "./ui/Button";
 
-export const PackingListAppNav = () => {
+export const AppNav = () => {
   return (
     <nav>
       <ul className={styles.navList}>
         <li>
-          <Link to="list">
-            <Button>Packing list</Button>
+          <Link to="choose-trip">
+            <Button>Choose trip</Button>
           </Link>
         </li>
         <li>
-          <Link to="/new-item">
-            <Button>Add packing item</Button>
+          <Link to="new-trip">
+            <Button>Create new trip</Button>
           </Link>
         </li>
         <li>
-          <Link to="/wather">
+          <Link to="/weather">
             <Button>Check weather</Button>
           </Link>
         </li>

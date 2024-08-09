@@ -1,0 +1,9 @@
+select {
+  font-size: 1rem;
+  padding: 0.2rem 1rem;
+  border: 1px solid;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-grey-0);
+  font-weight: 200;
+  box-shadow: var(--shadow-sm);
+}

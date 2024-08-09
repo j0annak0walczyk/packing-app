@@ -1,7 +1,7 @@
 .navList {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 2px;
   border: solid;
   border-radius: 5px;
   list-style-type: none;

@@ -1,0 +1,61 @@
+.reusableButton {
+  font-size: 0.7rem;
+  padding: 8px;
+  border: solid 1px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 5rem;
+  height: 3rem;
+}
+
+.reusableButton:hover {
+  background-color: transparent;
+  font-weight: 700;
+}
+
+.positive {
+  background-color: #4ea36a;
+  border-color: #4ea36a;
+  color: #f3eeee;
+}
+
+.positive:hover {
+  color: #4ea36a;
+}
+
+.gray {
+  background-color: #6c6c6c;
+  border-color: #6c6c6c;
+  color: #f3eeee;
+}
+
+.gray:hover {
+  color: #6c6c6c;
+}
+
+.information {
+  background-color: #4e88a3;
+  border-color: #4e88a3;
+  color: #f3eeee;
+}
+
+.information:hover {
+  color: #4e88a3;
+}
+
+.negative {
+  background-color: #af5050;
+  border-color: #af5050;
+  color: #f3eeee;
+}
+
+.negative:hover {
+  color: #af5050;
+}
+
+.active {
+  background-color: #9dc43b;
+  border-color: #9dc43b;
+  color: #f3eeee;
+}

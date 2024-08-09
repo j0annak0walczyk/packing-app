@@ -1,0 +1,16 @@
+.add {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 0.7rem;
+  padding: 2px;
+  border: solid 1px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 10rem;
+  height: 2.5rem;
+  background-color: #4ea36a;
+  border-color: #4ea36a;
+  color: #f3eeee;
+}
