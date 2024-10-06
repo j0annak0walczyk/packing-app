@@ -1,3 +1,35 @@
+.container {
+  margin: 0px;
+  margin-bottom: 6rem;
+}
+
 .list {
   overflow: scroll;
+}
+
+.table {
+  min-width: 80%;
+  margin: 0 auto;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tableHead {
+  text-align: center;
+  color: #061b21;
+}
+
+.tripsOnPage {
+  padding: 0.5rem;
+  margin: 1rem;
+  text-align: center;
+  background-color: #c7c7c1;
+  border-radius: 3px;
+}
+
+.noTripsInfo {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }

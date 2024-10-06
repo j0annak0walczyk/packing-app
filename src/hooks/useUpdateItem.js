@@ -4,10 +4,12 @@ import toast from "react-hot-toast";
 
 export function useUpdateItem() {
   const queryClient = useQueryClient();
-  const { mutate: updateItem, isLoading: isUpdating } = useMutation({
-    mutationFn: (id, updateColumn, updateValue) => {
-      updateItemApi(id, updateColumn, updateValue);
-    },
+  const {
+    mutate: updateItem,
+    isLoading: isUpdating,
+    refetch,
+  } = useMutation({
+    mutationFn: updateItemApi,
     onSuccess: () => {
       toast.success("Item successfully updated");
       queryClient.invalidateQueries({ queryKey: ["items"] });
@@ -15,5 +17,5 @@ export function useUpdateItem() {
     onError: (err) => toast.error(err.message),
   });
 
-  return { updateItem, isUpdating };
+  return { updateItem, isUpdating, refetch };
 }

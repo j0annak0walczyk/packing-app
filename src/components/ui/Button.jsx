@@ -13,7 +13,7 @@ export const Button = ({
     <button
       style={style}
       className={`${styles.reusableButton} ${styles[version]} ${
-        styles[active && "active"]
+        styles[active && `active${version}`]
       }`}
       onClick={onClickFunction}
       disabled={isDisabled}

@@ -1,0 +1,13 @@
+.container {
+  margin: 0.2rem;
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+}
+
+.container > p {
+  margin: 0.2rem;
+  padding: 0.2rem;
+  width: 70%;
+}

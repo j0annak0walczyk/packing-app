@@ -1,11 +1,58 @@
 .formContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .form {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 70% 30%;
   gap: 4px;
+  padding-top: 1rem;
+}
+
+.form > input {
+  padding: 5px;
+  margin: 2px;
+  border-radius: 3px;
+  border-color: #d4d1d1;
+}
+
+.form > textarea {
+  padding: 5px;
+  margin: 2px;
+  border-width: 2px;
+  border-radius: 3px;
+  border-color: #d4d1d1;
+  border-top-color: #807e7e;
+  border-left-color: #807e7e;
+}
+
+.tripDetailsContainer {
+  display: flex;
+}
+
+.tripDetailsContainer > div {
+  display: flex;
+  border-top: solid #bbbbb5;
+  border-radius: 3px;
+  background-color: #c7c7c1;
+  font-size: 0.8rem;
+  padding: 4px;
+  margin: 2px;
+  flex-direction: column;
+  width: 10rem;
+}
+
+.tripDetailsContainer > div > span {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 3px;
+  background-color: #c7c7c1;
+  font-size: 0.8rem;
+}
+
+.tripDetailsTop {
+  border-bottom: solid #bbbbb5;
 }

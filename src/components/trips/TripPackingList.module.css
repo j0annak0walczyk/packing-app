@@ -1,13 +1,87 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
 .detailsContainer {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-items: center;
+  align-items: center;
+  padding: 0.2rem;
+}
+
+.detailsNames {
+  width: 100%;
+  grid-column: 1/2;
+  padding-left: 0.5rem;
+}
+
+.detailsDates {
+  width: 100%;
+  grid-column: 2/3;
+  padding-left: 0.5rem;
+}
+
+.detailsDuration {
+  width: 100%;
+  grid-column: 1/3;
+  align-items: center;
+}
+
+.detailsContainer > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-top: solid #bbbbb5;
+  border-radius: 3px;
+  background-color: #c7c7c1;
+  margin: 0px;
+}
+
+.detailsContainer > div > span {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 3px;
+  background-color: #c7c7c1;
+  font-size: 1rem;
+  padding: 0.1rem;
+}
+
+.sortAndFilter {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: solid;
+  width: 100vh;
+  background-color: #a7b4b8;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
-.detailsContainer div {
-  padding: 4px;
-  margin: 2px;
+.addItem {
+  padding: 10px;
+}
+
+.itemsTable {
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+th {
+  text-align: center;
+  color: #061b21;
+}
+
+.noItemsInfo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }

@@ -24,7 +24,7 @@ export async function getItemsList() {
 }
 
 export async function updateItem(obj) {
-  const { id, updateColumn, updateValue } = obj;
+  const [id, updateColumn, updateValue] = obj;
   const { data, error } = await supabase
     .from("items")
     .update({ [updateColumn]: updateValue })

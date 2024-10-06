@@ -7,7 +7,13 @@ function AddItemsToOtherTrip({ setSelectedTrip }) {
 
   const options = trips.map((trip) => ({
     value: trip.id,
-    label: `${trip.country}, ${trip.city}, ${trip.dateFrom}-${trip.dateTo}`,
+    label: (
+      <>
+        <p>
+          {trip.country}, {trip.city} from {trip.dateFrom} to {trip.dateTo}
+        </p>
+      </>
+    ),
   }));
 
   const handleChange = (selectedOption) => {
@@ -20,22 +26,22 @@ function AddItemsToOtherTrip({ setSelectedTrip }) {
       background: "#fff",
       borderColor: "#9e9e9e",
       minHeight: "20px",
-      height: "20px",
-      width: "60%",
+      height: "1.8rem",
+      width: "15rem",
       boxShadow: "none",
     }),
     valueContainer: (provided) => ({
       ...provided,
-      height: "20px",
-      padding: "0 6px",
+
+      fontSize: "10px",
     }),
     input: (provided) => ({
       ...provided,
-      margin: "0",
+      margin: "0px",
     }),
     placeholder: (provided) => ({
       ...provided,
-      fontSize: "8px",
+      fontSize: "12px",
       lineHeight: "20px",
     }),
     singleValue: (provided) => ({
@@ -51,15 +57,16 @@ function AddItemsToOtherTrip({ setSelectedTrip }) {
     }),
     menu: (provided) => ({
       ...provided,
+      fontSize: "12px",
       marginTop: "0",
-      color: "red",
+      color: "#6C6C6C",
     }),
   };
 
   return (
     <Select
       options={options}
-      placeholder="Select trip"
+      placeholder="Select other trip"
       styles={customStyles}
       onChange={handleChange}
     />

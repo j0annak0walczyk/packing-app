@@ -1,0 +1,11 @@
+.container {
+  text-align: center;
+  padding-bottom: 6rem;
+}
+
+.daysContainer {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0.5rem;
+}

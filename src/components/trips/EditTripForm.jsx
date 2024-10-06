@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button } from "../ui/Button";
-import styles from "./CreateNewTripForm.module.css";
+import styles from "./EditTripForm.module.css";
 import ModalComponent from "../ui/ModalComponent";
 import useUpdateTrip from "../../hooks/useUpdateTrip";
 
@@ -12,16 +12,8 @@ export const EditTripForm = ({ isOpen, handleCloseModal, trip }) => {
   const [dateTo, setDateTo] = useState(trip.dateTo);
   const { updateTrip } = useUpdateTrip();
 
-  const editTrip = function (e) {
+  const saveChanges = function (e) {
     e.preventDefault();
-
-    // function generateNewId() {
-    //   const newId = `${country.slice(0, 3)}-${city.slice(
-    //     0,
-    //     3
-    //   )}-${dateFrom.slice(-2)}${dateFrom.slice(5, 7)}`;
-    //   return newId;
-    // }
 
     if (dateFrom > dateTo) {
       alert("End date cannot be greater than start date");
@@ -44,8 +36,8 @@ export const EditTripForm = ({ isOpen, handleCloseModal, trip }) => {
 
   return (
     <ModalComponent isOpen={isOpen} handleCloseModal={handleCloseModal}>
-      <div className={styles.formContainer}>
-        <form className={styles.form}>
+      <form className={styles.formContainer}>
+        <div className={styles.form}>
           <input
             type="text"
             placeholder="Country"
@@ -70,9 +62,11 @@ export const EditTripForm = ({ isOpen, handleCloseModal, trip }) => {
             value={dateTo}
             onChange={(e) => setDateTo(e.target.value)}
           />
-          <Button onClickFunction={editTrip}>Edit trip</Button>
-        </form>
-      </div>
+        </div>
+        <Button onClickFunction={saveChanges} version={"positive"}>
+          Save changes
+        </Button>
+      </form>
     </ModalComponent>
   );
 };

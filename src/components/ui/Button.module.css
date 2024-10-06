@@ -1,12 +1,35 @@
 .reusableButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.7rem;
-  padding: 8px;
+  padding: 5px;
   border: solid 1px;
   font-weight: 700;
   border-radius: 4px;
+  background-color: #a3a3a3;
+  border-color: #a3a3a3;
   cursor: pointer;
   width: 5rem;
   height: 3rem;
+}
+
+.nav {
+  border: solid 1px;
+  color: #dad8d8;
+  border-color: #01916a;
+  background-color: #01916a;
+}
+
+.nav:hoover {
+  background-color: transparent;
+  border: solid 1px;
+}
+
+.activenav {
+  border-color: #0e7358;
+  background-color: #0e7358;
+  color: #f3eeee;
 }
 
 .reusableButton:hover {
@@ -15,8 +38,8 @@
 }
 
 .positive {
-  background-color: #4ea36a;
-  border-color: #4ea36a;
+  background-color: #218066;
+  border-color: #218066;
   color: #f3eeee;
 }
 
@@ -27,7 +50,7 @@
 .gray {
   background-color: #6c6c6c;
   border-color: #6c6c6c;
-  color: #f3eeee;
+  color: #dad8d8;
 }
 
 .gray:hover {
@@ -53,9 +76,14 @@
 .negative:hover {
   color: #af5050;
 }
+.filter {
+  background-color: #3e788f;
+  border-color: #3e788f;
+  color: #f3eeee;
+}
 
-.active {
-  background-color: #9dc43b;
-  border-color: #9dc43b;
+.activefilter {
+  background-color: #235265;
+  border-color: #235265;
   color: #f3eeee;
 }

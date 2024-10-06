@@ -4,15 +4,21 @@ import AppNavContainer from "./AppNavContainer";
 
 function Homepage() {
   return (
-    <div className={styles.homepage}>
-      <div className={styles.header}>
-        <h1>Packing List App</h1>
-        <h2>Pack smart, travel light: Never forget a thing.</h2>
-        <AppNavContainer />
+    <div className={styles.pageContainer}>
+      <div className={styles.homepage}>
+        <div className={styles.header}>
+          <h1>Packing App</h1>
+          <h2>Pack smart, travel light: Never forget a thing.</h2>
+        </div>
+        <div>
+          <img
+            src="src/assets/homepage_photo.jpg"
+            alt="An image depicting a packed suitcase for a trip"
+          />
+        </div>
       </div>
-      <div>
-        <img src="src/assets/homepage_photo.jpg" />
-      </div>
+
+      <AppNavContainer />
     </div>
   );
 }

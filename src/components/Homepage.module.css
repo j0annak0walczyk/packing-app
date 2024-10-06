@@ -1,32 +1,81 @@
-.homepage {
-  /* height: 100vh; */
+.pageContainer {
   font-family: "Lucida Sans Unicode";
   color: #012f1b;
   background-image: linear-gradient(rgba(233, 229, 222, 0.8), #c9cac1);
   text-align: left;
+  width: 100%;
+}
+
+.homepage {
+  /* height: 100vh; */
+  font-family: "Lucida Sans Unicode";
+  color: #012f1b;
+  background-image: linear-gradient(#c9cac1, rgba(233));
+  text-align: left;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .homepage .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
   padding-left: 4rem;
+
+  width: 100%;
 }
 
 .homepage h1 {
-  margin-top: 10vh;
-  font-size: 6rem;
-  line-height: 6rem;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  font-size: 10rem;
+  line-height: 9rem;
 }
 
 .homepage h2 {
-  font-size: 1.9rem;
-  margin-top: 0;
-  padding-top: 0;
+  font-size: 3rem;
+  margin-left: 0.5rem;
 }
 
 .homepage img {
   height: 100vh;
   width: 40vw;
+}
+
+@media (max-width: 600px) {
+  .homepage {
+    /* height: 100vh; */
+    font-family: "Lucida Sans Unicode";
+    color: #012f1b;
+    background-image: linear-gradient(#8a943f, rgba(233));
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .homepage .header {
+    padding-left: 4rem;
+    width: 100%;
+  }
+
+  .homepage h1 {
+    margin-top: 6vh;
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 2vh;
+    padding-bottom: 0;
+  }
+
+  .homepage h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .homepage img {
+    height: 30vh;
+    width: 50vw;
+  }
 }

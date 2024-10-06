@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemAddToOtherTripContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  padding: 1rem;
+  border-top: solid #a3a3a3;
+  border-width: 0.1rem;
+}
+
+.itemDetailsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+  gap: 0.2rem;
+  grid-column-gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.inputName {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 100%;
+  padding: 0.3rem;
+}
+
+.inputQuantity {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  width: 100%;
+  padding: 0.3rem;
+}
+
+.inputNote {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  width: 100%;
+  padding: 5px;
+  margin: 2px;
+  border-width: 2px;
+  border-radius: 3px;
+  border-color: #d4d1d1;
+  border-top-color: #807e7e;
+  border-left-color: #807e7e;
+}
+
+.buttonForm {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  border: solid 1px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 18rem;
+  height: 100%;
+  background-color: #a0d8b3;
+  border-color: #a0d8b3;
+  color: #f3eeee;
+}
+
+.add > p {
+  font-size: 0.8rem;
+  color: #378852;
+}
+
+.selectLine {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  color: #374d88;
+  font-size: 1rem;
+}
+
+.tooltip {
+  background-color: #4e88ae !important ;
+  color: white !important ;
+  font-weight: 200 !important ;
+  font-size: 10px !important ;
+  padding: 0.4rem !important ;
+  border-radius: 4px !important ;
+  opacity: 0.8 !important ;
+}
+
+.tooltipForm {
+  background-color: #a3a3a3 !important ;
+  color: white !important ;
+  font-weight: 200 !important ;
+  font-size: 12px !important ;
+  padding: 0.6rem !important ;
+  padding-bottom: 0.8rem !important;
+  border-radius: 4px !important ;
+  opacity: 0.9 !important ;
+}

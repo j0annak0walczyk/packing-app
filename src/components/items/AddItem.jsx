@@ -48,7 +48,24 @@ function AddItem({ isOpen, handleCloseModal, tripDetails }) {
 
     if (!item) return;
 
-    if (item && quantity) {
+    if (!item || !quantity) alert("Fill in all required fields");
+    if (
+      quantity &&
+      (quantity.includes(",") ||
+        quantity.includes(".") ||
+        quantity.includes("-") ||
+        quantity.includes("e"))
+    )
+      alert("Quantity has to be a positive integer");
+
+    if (
+      item &&
+      quantity &&
+      !quantity.includes(",") &&
+      !quantity.includes(".") &&
+      !quantity.includes("-") &&
+      !quantity.includes("e")
+    ) {
       const newItem = {
         checked: false,
         item: item,
@@ -60,20 +77,32 @@ function AddItem({ isOpen, handleCloseModal, tripDetails }) {
       addNewItem({ ...newItem });
 
       clearForm();
-    } else {
-      alert("Fill in all required fields");
     }
   };
 
   return (
     <ModalComponent isOpen={isOpen} handleCloseModal={handleCloseModal}>
       <div className={styles.formContainer}>
+        <div className={styles.tripDetailsContainer}>
+          <div>
+            <span className={styles.tripDetailsTop}>
+              <p>Country:</p> <p>{country}</p>
+            </span>
+            <span>
+              <p>City:</p> <p>{city}</p>
+            </span>
+          </div>
+          <div>
+            <span className={styles.tripDetailsTop}>
+              <p>Date from:</p> <p>{dateFrom}</p>
+            </span>
+            <span>
+              <p>Date to:</p>
+              <p>{dateTo}</p>
+            </span>
+          </div>
+        </div>
         <form className={styles.form}>
-          <span>{country}</span>
-          <span>{city}</span>
-          <span>
-            from {dateFrom} to {dateTo}
-          </span>
           <input
             type="text"
             placeholder="Item"
@@ -91,7 +120,9 @@ function AddItem({ isOpen, handleCloseModal, tripDetails }) {
             value={note}
             onChange={(e) => setNote(e.target.value)}
           />
-          <Button onClickFunction={postNewItem}>Add item</Button>
+          <Button onClickFunction={postNewItem} style={{ margin: "1rem" }}>
+            Add item
+          </Button>
         </form>
       </div>
     </ModalComponent>

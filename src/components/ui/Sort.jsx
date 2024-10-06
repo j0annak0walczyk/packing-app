@@ -13,12 +13,13 @@ export const Sort = ({ options }) => {
   }
   return (
     <div className={styles.container}>
-      Sort by:
+      <p>Sort by:</p>
       <Select
         className={styles.sortList}
         options={options}
         onChange={handleChange}
         value={sortBy}
+        version={"select"}
       />
     </div>
   );

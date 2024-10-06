@@ -1,13 +1,19 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button } from "../ui/Button";
 import styles from "./CreateNewTripForm.module.css";
 import { useCreateTrip } from "../../hooks/useCreateTrip";
 
-export const CreateNewTripForm = () => {
+export const CreateNewTripForm = ({
+  countryData = "",
+  cityData = "",
+  setIsOpenModalFromChild = () => {},
+  style,
+}) => {
   const { createTrip, isCreatingTrip } = useCreateTrip();
 
-  const [country, setCountry] = useState("");
-  const [city, setCity] = useState("");
+  const [country, setCountry] = useState(countryData);
+  const [city, setCity] = useState(cityData);
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");
 
@@ -46,14 +52,15 @@ export const CreateNewTripForm = () => {
 
       createTrip(newTrip);
       clearForm();
+      setIsOpenModalFromChild(false);
     } else if (!country || !city || !dateFrom || !dateTo) {
       alert("Fill in all fields");
     }
   };
 
   return (
-    <div className={styles.formContainer}>
-      <form className={styles.form}>
+    <div className={style ? style.formPopupContainer : styles.formContainer}>
+      <form className={styles[style] || styles.form}>
         <input
           type="text"
           placeholder="Country"
@@ -66,18 +73,28 @@ export const CreateNewTripForm = () => {
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <input
-          type="date"
-          placeholder="Item"
-          value={dateFrom}
-          onChange={(e) => setDateFrom(e.target.value)}
-        />
-        <input
-          type="date"
-          placeholder="Quantity"
-          value={dateTo}
-          onChange={(e) => setDateTo(e.target.value)}
-        />
+        <div className={styles.inputDateContainer}>
+          <label className={styles.placeholder} id="placeholder">
+            From:
+          </label>
+          <input
+            className={styles.inputDate}
+            type="date"
+            placeholder="Date from"
+            value={dateFrom}
+            onChange={(e) => setDateFrom(e.target.value)}
+          />
+          <label className={styles.placeholder} id="placeholder">
+            To:
+          </label>
+          <input
+            className={styles.inputDate}
+            type="date"
+            placeholder="Date to"
+            value={dateTo}
+            onChange={(e) => setDateTo(e.target.value)}
+          />
+        </div>
         <Button onClickFunction={createNewTrip} isdisabled={isCreatingTrip}>
           Create trip
         </Button>
