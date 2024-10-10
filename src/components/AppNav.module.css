@@ -10,9 +10,6 @@
 }
 
 .navList > li {
-  padding: 0.3rem;
-}
-
-.navList a {
-  text-decoration: none;
+  padding: 0rem;
+  margin: 0px;
 }

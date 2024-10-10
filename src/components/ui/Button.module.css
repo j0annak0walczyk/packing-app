@@ -12,9 +12,11 @@
   cursor: pointer;
   width: 5rem;
   height: 3rem;
+  margin: 0px;
 }
 
 .nav {
+  margin: 0;
   border: solid 1px;
   color: #dad8d8;
   border-color: #01916a;
@@ -86,4 +88,10 @@
   background-color: #235265;
   border-color: #235265;
   color: #f3eeee;
+}
+
+.addButton {
+  background-color: #e9e69c;
+  border-color: #e9e69c;
+  color: #6c6c6c;
 }

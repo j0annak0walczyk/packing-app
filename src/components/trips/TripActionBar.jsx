@@ -101,7 +101,7 @@ function TripActionBar({ trip }) {
             )}
           </div>
           <div>
-            <Link to={`/${trip.id}`}>
+            <Link to={`/app/${trip.id}`}>
               <Button version={"information"}>See packing list</Button>
             </Link>
           </div>

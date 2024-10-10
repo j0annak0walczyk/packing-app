@@ -5,12 +5,21 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import PopupContent from "./PopupContent";
 import { createRoot } from "react-dom/client";
+import { Loader } from "../ui/Loader";
 
 function Map() {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const [userCoords, setUserCoords] = useState(null);
   const [shareLocation, setShareLocation] = useState(null);
+  const [loading, setLoading] = useState(false); // Zmienna do kontroli ładowania
+
+  const buttonStyle = {
+    width: "100%",
+    height: "4rem",
+    fontSize: "1rem",
+    color: "#0b4b3a",
+  };
 
   // Handle map click to place marker and fetch data
   const handleMapClick = useCallback((mapEvent) => {
@@ -46,10 +55,18 @@ function Map() {
       // Inicjalizacja mapy tylko raz
       mapRef.current = L.map("map").setView(userCoords, shareLocation ? 13 : 3);
 
-      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(mapRef.current);
+      const tileLayer = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }
+      );
+
+      // Ustawiamy loader na false dopiero, gdy kafelki zostaną załadowane
+      tileLayer.on("load", () => {});
+
+      tileLayer.addTo(mapRef.current);
 
       mapRef.current.on("click", handleMapClick);
     } else {
@@ -79,29 +96,41 @@ function Map() {
   }
 
   function loadMap(shareLocationAgreement) {
+    setLoading(true);
     setShareLocation(shareLocationAgreement);
 
     if (shareLocationAgreement) {
       getPosition();
+      setLoading(false);
     } else {
       setUserCoords([51.3858788, 21.1565182]);
+      setLoading(false);
     }
   }
+
+  if (loading) return <Loader />;
 
   return (
     <div className={styles.container}>
       <div className={styles.buttonsContainer}>
-        <Button style={{ width: "100%" }} onClickFunction={() => loadMap(true)}>
+        <Button style={buttonStyle} onClickFunction={() => loadMap(true)}>
           I agree to share my location
         </Button>
-        <Button
-          style={{ width: "100%" }}
-          onClickFunction={() => loadMap(false)}
-        >
+        <Button style={buttonStyle} onClickFunction={() => loadMap(false)}>
           I do not agree to share my location
         </Button>
       </div>
-      <div id="map" style={{ height: "500px", width: "100%" }}></div>
+      {userCoords && (
+        <div
+          id="map"
+          style={{
+            height: "100%",
+            width: "100%",
+            minHeight: "55vH",
+            minWidth: "80vH",
+          }}
+        ></div>
+      )}
     </div>
   );
 }

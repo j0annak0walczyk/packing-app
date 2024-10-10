@@ -7,7 +7,6 @@
 }
 
 .homepage {
-  /* height: 100vh; */
   font-family: "Lucida Sans Unicode";
   color: #012f1b;
   background-image: linear-gradient(#c9cac1, rgba(233));
@@ -23,7 +22,6 @@
   justify-content: center;
   padding: 0;
   padding-left: 4rem;
-
   width: 100%;
 }
 
@@ -34,17 +32,15 @@
 
 .homepage h2 {
   font-size: 3rem;
-  margin-left: 0.5rem;
 }
 
 .homepage img {
   height: 100vh;
-  width: 40vw;
+  width: 45vw;
 }
 
 @media (max-width: 600px) {
   .homepage {
-    /* height: 100vh; */
     font-family: "Lucida Sans Unicode";
     color: #012f1b;
     background-image: linear-gradient(#8a943f, rgba(233));

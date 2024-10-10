@@ -126,7 +126,10 @@ export default function TripPackingList() {
             refetch={refetchItemsList}
           />
           <div className={styles.addItem}>
-            <Button version={"gray"} onClickFunction={handleOpenAddItemForm}>
+            <Button
+              version={"addButton"}
+              onClickFunction={handleOpenAddItemForm}
+            >
               Add item
             </Button>
             {openAddItemForm && (
@@ -141,7 +144,10 @@ export default function TripPackingList() {
         {sortedItems < 1 ? (
           <div className={styles.noItemsInfo}>
             <div>{noItemInformation}</div>
-            <Button version={"gray"} onClickFunction={handleOpenAddItemForm}>
+            <Button
+              version={"addButton"}
+              onClickFunction={handleOpenAddItemForm}
+            >
               Add item
             </Button>
           </div>

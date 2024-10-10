@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import Homepage from "./components/Homepage";
 import styles from "./App.module.css";
 import { Toaster } from "react-hot-toast";
+import AppNavContainer from "./components/AppNavContainer";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,17 +14,17 @@ const queryClient = new QueryClient({
 export const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Homepage />
+      <AppNavContainer />
       <Toaster
         position="top-center"
         gutter={12}
         containerStyle={{ margin: "8px" }}
         toastOptions={{
           success: {
-            duration: 3000,
+            duration: 2000,
           },
           error: {
-            duration: 5000,
+            duration: 2000,
           },
           style: {
             fontSize: "16px",

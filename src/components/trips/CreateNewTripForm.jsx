@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "../ui/Button";
 import styles from "./CreateNewTripForm.module.css";
 import { useCreateTrip } from "../../hooks/useCreateTrip";
+import toast from "react-hot-toast";
 
 export const CreateNewTripForm = ({
   countryData = "",
@@ -30,7 +31,9 @@ export const CreateNewTripForm = ({
     const createDate = new Date();
 
     if (dateFrom > dateTo) {
-      alert("End date cannot be greater than start date");
+      if (dateFrom > dateTo) {
+        toast.error("End date cannot be greater than start date");
+      }
     }
 
     if (
@@ -42,7 +45,6 @@ export const CreateNewTripForm = ({
       dateFrom <= dateTo
     ) {
       const newTrip = {
-        // id: generateNewId(),
         createDate: createDate,
         city: city,
         country: country,

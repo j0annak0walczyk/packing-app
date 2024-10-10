@@ -26,7 +26,7 @@ export const ChooseTrip = ({ trip }) => {
       <td className={styles.cell}>{trip.dateFrom}</td>
       <td className={styles.cell}>{trip.dateTo}</td>
       <td className={styles.cell}>{tripDuration.days}</td>
-      <td>
+      <td className={styles.buttonCell}>
         <Button
           version={"gray"}
           onClickFunction={handleOpenTripActionBar}

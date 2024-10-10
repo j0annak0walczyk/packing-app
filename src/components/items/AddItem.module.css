@@ -16,7 +16,11 @@
   padding: 5px;
   margin: 2px;
   border-radius: 3px;
+  border-color: #514a4a;
   border-color: #d4d1d1;
+  border-top-color: #807e7e;
+  border-left-color: #807e7e;
+  box-sizing: border-box;
 }
 
 .form > textarea {

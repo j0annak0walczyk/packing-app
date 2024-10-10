@@ -1,28 +1,27 @@
-/* eslint-disable react/prop-types */
-import { CreateNewTripForm } from "./trips/CreateNewTripForm";
-import styles from "./AppNavContainer.module.css";
+// AppNavContainer.jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AppNav } from "./AppNav";
+import Homepage from "./Homepage";
 import ChooseTrips from "./trips/ChooseTrips";
 import TripPackingList from "./trips/TripPackingList";
-import Map from "./maps/Map";
+import { CreateNewTripForm } from "./trips/CreateNewTripForm";
 import Weather from "./weather/Weather";
+import Map from "./maps/Map";
+import AppLayout from "./AppLayout";
 
 function AppNavContainer() {
   return (
     <BrowserRouter>
-      <div className={styles.container}>
-        <AppNav />
-        <Routes>
-          <Route path="/" element={<ChooseTrips />} />
-          <Route path="/choose-trip" element={<ChooseTrips />} />
-          <Route path="/choose-trip/new-trip" element={<CreateNewTripForm />} />
-          <Route path="/new-trip" element={<CreateNewTripForm />} />
-          <Route path="/:id" element={<TripPackingList />} />
-          <Route path="/weather" element={<Weather />} />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/app" element={<AppLayout />}>
+          <Route path="choose-trip" element={<ChooseTrips />} />
+          <Route path="choose-trip/new-trip" element={<CreateNewTripForm />} />
+          <Route path="new-trip" element={<CreateNewTripForm />} />
+          <Route path=":id" element={<TripPackingList />} />
+          <Route path="weather" element={<Weather />} />
           <Route path="map" element={<Map />} />
-        </Routes>
-      </div>
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }

@@ -16,18 +16,21 @@ export const AppNav = () => {
     <nav>
       <ul className={styles.navList}>
         <li>
-          <Link to="choose-trip">
-            <Button active={"/choose-trip" === currentFilter} version={"nav"}>
+          <Link to="/app/choose-trip">
+            <Button
+              active={"/app/choose-trip" === currentFilter}
+              version={"nav"}
+            >
               Choose trip
             </Button>
           </Link>
         </li>
         <li>
-          <Link to="new-trip">
+          <Link to="/app/new-trip">
             <Button
               active={
-                "/new-trip" === currentFilter ||
-                "/choose-trip/new-trip" === currentFilter
+                "/app/new-trip" === currentFilter ||
+                "/app/choose-trip/new-trip" === currentFilter
               }
               version={"nav"}
             >
@@ -37,15 +40,19 @@ export const AppNav = () => {
         </li>
 
         <li>
-          <Link to="/map">
-            <Button active={"/map" === currentFilter} version={"nav"}>
+          <Link to="/app/map">
+            <Button active={"/app/map" === currentFilter} version={"nav"}>
               Search on the map
             </Button>
           </Link>
         </li>
         <li>
-          <Link to="/weather">
-            <Button active={"/weather" === currentFilter} version={"nav"}>
+          <Link to="/app/weather">
+            <Button
+              // onClickFunction={handleNavButtons}
+              active={"/app/weather" === currentFilter}
+              version={"nav"}
+            >
               Check weather
             </Button>
           </Link>

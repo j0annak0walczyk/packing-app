@@ -120,7 +120,11 @@ function AddItem({ isOpen, handleCloseModal, tripDetails }) {
             value={note}
             onChange={(e) => setNote(e.target.value)}
           />
-          <Button onClickFunction={postNewItem} style={{ margin: "1rem" }}>
+          <Button
+            version={"addButton"}
+            onClickFunction={postNewItem}
+            style={{ margin: "1rem" }}
+          >
             Add item
           </Button>
         </form>

@@ -4,6 +4,7 @@ import { Button } from "../ui/Button";
 import ModalComponent from "../ui/ModalComponent";
 import { QueryClient, QueryClientProvider } from "react-query";
 import styles from "./PopupContent.module.css";
+import { Loader } from "../ui/Loader";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -60,9 +61,20 @@ function PopupContent({ popupCoords }) {
       <div className={styles.container}>
         <p>
           Country:{" "}
-          {loading ? "Loading..." : data?.address?.country || "Unknown"}
+          {loading ? (
+            <Loader version={"small"} />
+          ) : (
+            data?.address?.country || "Unknown"
+          )}
         </p>
-        <p>City: {loading ? "Loading..." : data?.address?.city || "Unknown"}</p>
+        <p>
+          City:{" "}
+          {loading ? (
+            <Loader version={"small"} />
+          ) : (
+            data?.address?.city || "Unknown"
+          )}
+        </p>
         <p>
           <Button
             style={{ width: "6rem", height: "1.7rem" }}

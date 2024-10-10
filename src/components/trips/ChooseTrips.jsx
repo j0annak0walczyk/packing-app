@@ -7,12 +7,13 @@ import styles from "./ChooseTrips.module.css";
 import ChooseTripsBar from "./ChooseTripsBar";
 import { calculateTripDuration } from "../../calculations/calculateTripDuration";
 import { Button } from "../ui/Button";
+import { AppNav } from "../AppNav";
 
 function ChooseTrips({ isLoading }) {
-  const { data: tripsList } = useTripsList();
+  const { data: tripsList, isLoading: isLoadingTrips } = useTripsList();
   const [searchParams] = useSearchParams();
 
-  if (isLoading) return <Loader />;
+  if (isLoading || isLoadingTrips) return <Loader />;
 
   // FILTER
 
@@ -76,6 +77,8 @@ function ChooseTrips({ isLoading }) {
     }
     return 0;
   });
+
+  // if (isLoadingTrips) return <Loader />;
 
   return (
     <div className={styles.container}>
