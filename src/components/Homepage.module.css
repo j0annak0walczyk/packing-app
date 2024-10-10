@@ -40,6 +40,14 @@
 }
 
 @media (max-width: 600px) {
+  .pageContainer {
+    font-family: "Lucida Sans Unicode";
+    color: #012f1b;
+    background-image: linear-gradient(rgba(233, 229, 222, 0.8), #c9cac1);
+    text-align: left;
+    width: 100%;
+  }
+
   .homepage {
     font-family: "Lucida Sans Unicode";
     color: #012f1b;
@@ -48,16 +56,19 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100vh;
     align-items: center;
   }
 
   .homepage .header {
-    padding-left: 4rem;
-    width: 100%;
+    width: 100vw;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 
   .homepage h1 {
-    margin-top: 6vh;
+    margin-top: 2vh;
     font-size: 4rem;
     line-height: 4rem;
     margin-bottom: 2vh;
@@ -71,7 +82,10 @@
   }
 
   .homepage img {
-    height: 30vh;
-    width: 50vw;
+    padding: 2rem;
+    height: 50vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
   }
 }
