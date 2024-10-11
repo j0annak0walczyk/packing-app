@@ -8,11 +8,13 @@ function AppLayout() {
   return (
     <div className={styles.container}>
       <div className={styles.menu}>
-        <Link to="/">
+        <Link to="/" className={styles.logoContainer}>
           <img className={styles.logo} src={IMAGES.logo} alt="Logo" />
         </Link>
-        <AppNav className={styles.nav} />
-        <Link to="/">
+        <div className={styles.nav}>
+          <AppNav />
+        </div>
+        <Link to="/" className={styles.logoutContainer}>
           <Button
             style={{
               color: "#0b4b3a",

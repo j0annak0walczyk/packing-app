@@ -7,7 +7,6 @@ import styles from "./ChooseTrips.module.css";
 import ChooseTripsBar from "./ChooseTripsBar";
 import { calculateTripDuration } from "../../calculations/calculateTripDuration";
 import { Button } from "../ui/Button";
-import { AppNav } from "../AppNav";
 
 function ChooseTrips({ isLoading }) {
   const { data: tripsList, isLoading: isLoadingTrips } = useTripsList();
@@ -77,8 +76,6 @@ function ChooseTrips({ isLoading }) {
     }
     return 0;
   });
-
-  // if (isLoadingTrips) return <Loader />;
 
   return (
     <div className={styles.container}>

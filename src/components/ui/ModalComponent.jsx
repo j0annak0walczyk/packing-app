@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { Button } from "./Button";
 import styles from "./ModalComponent.module.css";
 import { HiMiniXMark, HiOutlineTrash } from "react-icons/hi2";
+import { useMediaQuery } from "@mui/material";
 
 Modal.setAppElement("#root");
 
@@ -17,6 +18,8 @@ const ModalComponent = ({
     handleCloseModal(false);
   }
 
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   const customStyles = {
     content: {
       zIndex: 1000,
@@ -24,9 +27,8 @@ const ModalComponent = ({
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      width: "30vw",
-      height: "auto",
-      minHeight: "40vh",
+      minHeight: isMobile ? "30vh" : "50vH",
+      minWidth: isMobile ? "45vh" : "40vH",
     },
     overlay: {
       zIndex: 1000,

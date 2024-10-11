@@ -95,3 +95,12 @@
   border-color: #e9e69c;
   color: #6c6c6c;
 }
+
+@media (max-width: 600px) {
+  .reusableButton {
+    width: 4.9rem;
+    height: 3rem;
+    font-weight: 500;
+    font-size: 0.6rem;
+  }
+}

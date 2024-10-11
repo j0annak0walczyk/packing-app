@@ -5,7 +5,7 @@ import styles from "./ChooseTripsBar.module.css";
 function ChooseTripsBar() {
   return (
     <div className={styles.container}>
-      <Sort
+      <Sort 
         options={[
           { value: "country-asc", label: "Country (A-Z)" },
           { value: "country-desc", label: "Country (Z-A)" },

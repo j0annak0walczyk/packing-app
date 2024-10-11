@@ -17,8 +17,8 @@ export const Filter = ({ filterField, options, refetch = () => {} }) => {
     <div className={styles.container}>
       <p>Filter by:</p>
       <ul className={styles.filterList}>
-        {options?.map((option) => (
-          <li key={option.value}>
+        {options?.map((option, index) => (
+          <li className={styles[`item${index + 1}`]} key={option.value}>
             <Button
               active={option.value === currentFilter}
               isDisabled={option.value === currentFilter}

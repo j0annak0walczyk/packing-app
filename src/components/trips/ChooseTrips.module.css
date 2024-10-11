@@ -38,3 +38,20 @@
   gap: 1rem;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 600px) {
+  .container {
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+  }
+  .tableHead {
+    font-size: 0.8rem;
+  }
+
+  .table {
+    /* min-width: 100vw; */
+    padding: 0px;
+    margin: 0px;
+  }
+}
