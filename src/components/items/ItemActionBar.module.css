@@ -114,3 +114,25 @@
   border-radius: 4px !important ;
   opacity: 0.9 !important ;
 }
+
+@media (max-width: 600px) {
+  .form {
+    padding: 0.5rem;
+  }
+
+  .inputName {
+    box-sizing: border-box;
+  }
+
+  .inputQuantity {
+    box-sizing: border-box;
+  }
+
+  .inputNote {
+    box-sizing: border-box;
+  }
+
+  .buttonForm {
+    box-sizing: border-box;
+  }
+}

@@ -3,13 +3,11 @@ import { useState } from "react";
 import { useAddItem } from "../../hooks/useAddItem";
 import ModalComponent from "../ui/ModalComponent";
 import { Button } from "../ui/Button";
-// import { useItemsList } from "../hooks/useItemsList";
 import styles from "./AddItem.module.css";
 
 function AddItem({ isOpen, handleCloseModal, tripDetails }) {
   const { city, country, dateFrom, dateTo, id: tripId } = tripDetails[0];
   const { addNewItem } = useAddItem();
-  // const { data: itemsList, refetch: refetchItemsList } = useItemsList();
 
   const [item, setItem] = useState("");
   const [quantity, setQuantity] = useState("");

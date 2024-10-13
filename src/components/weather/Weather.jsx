@@ -53,7 +53,7 @@ function Weather() {
 
   return (
     <div className={styles.weatherContainer}>
-      <h3>Check weather for the upcoming weekend</h3>
+      <h4>Check weather for the upcoming week</h4>
       <div>
         <input
           type="text"

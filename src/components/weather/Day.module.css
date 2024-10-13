@@ -8,8 +8,19 @@
   padding: 1rem;
   width: 6rem;
   background-color: #a7b4b8;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
 }
 
 .icons {
   font-size: 2rem;
+}
+
+@media (max-width: 600px) {
+  .dayContainer {
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+    box-sizing: border-box;
+  }
 }

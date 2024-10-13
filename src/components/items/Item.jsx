@@ -45,7 +45,7 @@ function Item({ item }) {
       <td className={styles.cell}>{itemDetails.item}</td>
       <td className={styles.cell}>{itemDetails.quantity}</td>
       <td className={styles.cell}>{itemDetails.note}</td>
-      <td className={styles.buttonCell}>
+      <td>
         <Button
           version={"gray"}
           onClickFunction={handleOpenItemActionBar}

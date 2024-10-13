@@ -60,3 +60,9 @@
 .tripDetailsTop {
   border-bottom: solid #bbbbb5;
 }
+
+@media (max-width: 600px) {
+  .tripDetailsContainer {
+    flex-direction: column;
+  }
+}

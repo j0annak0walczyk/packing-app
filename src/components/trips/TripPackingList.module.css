@@ -89,3 +89,61 @@ th {
   flex-direction: column;
   align-items: center;
 }
+
+@media (max-width: 600px) {
+  .detailsContainer {
+    width: 90vw;
+    grid-template-columns: 70% 30%;
+    gap: 0.2rem;
+  }
+
+  .detailsContainer > div > span {
+    padding-left: 0.5rem;
+  }
+
+  .detailsNames {
+    width: 100%;
+    grid-column: 1/2;
+  }
+
+  .detailsDates {
+    width: 100%;
+    grid-column: 1/2;
+  }
+
+  .detailsDuration {
+    width: 100%;
+    grid-row: 1/3;
+    grid-column: 2/3;
+    align-items: center;
+    max-width: 3.5rem;
+  }
+
+  .sortAndFilter {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .sortAndFilter > :first-child {
+    grid-column: 1/6;
+  }
+
+  .sortAndFilter > :nth-child(2) {
+    grid-column: 1/5;
+  }
+
+  .listContainer {
+    width: 95vw;
+  }
+
+  .itemsTable {
+    padding: 1rem;
+  }
+
+  .noItemsInfo {
+    font-size: 0.8rem;
+  }
+}

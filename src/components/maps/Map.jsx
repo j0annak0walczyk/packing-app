@@ -12,12 +12,12 @@ function Map() {
   const markerRef = useRef(null);
   const [userCoords, setUserCoords] = useState(null);
   const [shareLocation, setShareLocation] = useState(null);
-  const [loading, setLoading] = useState(false); // Zmienna do kontroli ładowania
+  const [loading, setLoading] = useState(false);
 
   const buttonStyle = {
     width: "100%",
     height: "4rem",
-    fontSize: "1rem",
+    fontSize: "0.8rem",
     color: "#0b4b3a",
   };
 
@@ -36,14 +36,7 @@ function Map() {
 
     markerRef.current = L.marker({ lat, lng })
       .addTo(mapRef.current)
-      .bindPopup(
-        L.popup({
-          // maxWidth: 45,
-          // minWidth: 10,
-          // minHeight: 200,
-          // maxHeight: 200,
-        })
-      )
+      .bindPopup(L.popup({}))
       .setPopupContent(popupContentNode)
       .openPopup();
   }, []);
@@ -127,7 +120,6 @@ function Map() {
             height: "100%",
             width: "100%",
             minHeight: "55vH",
-            minWidth: "80vH",
           }}
         ></div>
       )}
