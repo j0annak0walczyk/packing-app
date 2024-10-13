@@ -77,7 +77,7 @@ function PopupContent({ popupCoords }) {
         </p>
         <p>
           <Button
-            style={{ width: "6rem", height: "1.7rem" }}
+            version={"mapAddButton"}
             onClickFunction={handleOpenNewTripForm}
           >
             Add new trip

@@ -36,7 +36,14 @@ function Map() {
 
     markerRef.current = L.marker({ lat, lng })
       .addTo(mapRef.current)
-      .bindPopup(L.popup({}))
+      .bindPopup(
+        L.popup({
+          // maxWidth: 45,
+          // minWidth: 10,
+          // minHeight: 200,
+          // maxHeight: 200,
+        })
+      )
       .setPopupContent(popupContentNode)
       .openPopup();
   }, []);

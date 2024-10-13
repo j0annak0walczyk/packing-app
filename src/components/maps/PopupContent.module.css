@@ -3,11 +3,24 @@
   padding: 0.2rem;
   display: flex;
   flex-direction: column;
-  width: 15vw;
+  width: 100%;
 }
 
 .container > p {
   margin: 0.2rem;
   padding: 0.2rem;
   width: 70%;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 0rem;
+    padding: 0rem;
+  }
+
+  .container > p {
+    margin: 0rem;
+    padding: 0.1rem;
+    width: 100%;
+  }
 }
