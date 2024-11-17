@@ -36,10 +36,15 @@ function Homepage() {
           )}
         </div>
         <div>
-          <img
-            src={IMAGES.homepage_photo}
-            alt="An image depicting a packed suitcase for a trip"
-          />
+          <picture>
+            <source srcSet={IMAGES.homepage_photo_webp} type="image/webp" />
+            <source srcSet={IMAGES.homepage_photo} type="image/jpeg" />
+            <img
+              src={IMAGES.homepage_photo}
+              alt="An image depicting a packed suitcase for a trip"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </div>
     </div>
