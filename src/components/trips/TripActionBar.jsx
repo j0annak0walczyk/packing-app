@@ -35,6 +35,8 @@ function TripActionBar({ trip }) {
         toast.success("Jupi usunąłęś to co trzeba i pokazeuje jeden toast");
         refetchItemsList();
       });
+
+    console.log(123); // ważna zmiana
   }
 
   function handleAddListToOtherList() {
