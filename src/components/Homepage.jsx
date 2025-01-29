@@ -42,7 +42,7 @@ function Homepage() {
             <img
               src={IMAGES.homepage_photo}
               alt="An image depicting a packed suitcase for a trip"
-              loading="lazy"
+              loading="eager"
             />
           </picture>
         </div>
