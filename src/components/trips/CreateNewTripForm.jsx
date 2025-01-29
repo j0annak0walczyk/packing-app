@@ -18,12 +18,12 @@ export const CreateNewTripForm = ({
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");
 
-  const clearForm = function () {
+  function clearForm() {
     setCountry("");
     setCity("");
     setDateFrom("");
     setDateTo("");
-  };
+  }
 
   const createNewTrip = function (e) {
     e.preventDefault();
